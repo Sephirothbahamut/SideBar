@@ -1,0 +1,10 @@
+﻿  main.cpp
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\win.h(13): warning C4091: 'static ': ignored on left of 'Win::handle_data' when no variable is declared
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\main.cpp(139): warning C4244: 'argument': conversion from 'double' to 'sf::Uint8', possible loss of data
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\main.cpp(141): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\main.cpp(141): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\main.cpp(190): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\main.cpp(196): warning C4244: 'argument': conversion from 'double' to 'sf::Uint8', possible loss of data
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\main.cpp(198): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\main.cpp(198): warning C4305: 'argument': truncation from 'double' to 'float'
+  SideBar.vcxproj -> C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Debug\SideBar.exe

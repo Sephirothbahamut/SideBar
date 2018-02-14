@@ -1,0 +1,17 @@
+<settings>
+	<colors>
+		<main>
+			<color rr="0" gg="240" bb="255"/>
+		</main>
+		<sec>
+			<color rr="0" gg="0" bb="50"/>
+		</sec>
+	</colors>
+	<other>
+		<particles amount="8"/>
+		<anim_speed value="6"/>
+		<vertical_spacing value="12"/>
+		<bottom_bar enabled="1"/>
+		<prompt enabled="1"/>
+	</other>
+</settings>

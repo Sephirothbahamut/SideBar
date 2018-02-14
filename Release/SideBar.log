@@ -1,0 +1,13 @@
+﻿  BarButton.cpp
+BarButton.cpp(20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+BarButton.cpp(23): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+BarButton.cpp(41): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+BarButton.cpp(121): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+BarButton.cpp(134): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+     Creating library C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\SideBar.lib and object C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\SideBar.exp
+  Generating code
+  3 of 816 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  SideBar.vcxproj -> C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\SideBar.exe
