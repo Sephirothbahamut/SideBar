@@ -14,13 +14,12 @@ extern int SEC_GG;
 extern int SEC_BB;
 
 extern sf::Texture pt_texture;
-extern sf::Sprite pt_sprite;
 
 extern int PROMPT_HEIGHT;
-extern bool TEST;
 
 int bottom_main()
 	{
+
 	sf::RenderWindow window(sf::VideoMode(Screen::get_width(), Screen::get_taskbar_height()), "BottomBar", sf::Style::None);
 	window.setPosition(sf::Vector2i(0, Screen::get_height() - Screen::get_taskbar_height()));
 	window.setFramerateLimit(60);

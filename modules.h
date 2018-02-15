@@ -6,7 +6,6 @@
 #include <algorithm>
 #include <dwmapi.h>
 #include "tinyxml2.h"
-#include <thread>
 
 #define xml tinyxml2
 
@@ -20,7 +19,6 @@
 #include "PartSystem.h"
 #include "BarnackClock.h"
 #include "BarButton.h"
-#include "modules.h"
 
 int bar_main();
 int prompt_main();

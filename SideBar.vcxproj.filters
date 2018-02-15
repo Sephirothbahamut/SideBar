@@ -25,6 +25,9 @@
     <Filter Include="File di origine\Items">
       <UniqueIdentifier>{11180924-8090-492c-92e2-147a8de4ada3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="File di origine\Modules">
+      <UniqueIdentifier>{c5d0823e-f6c9-43b7-9bc2-f6025974128e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -58,13 +61,13 @@
       <Filter>File di origine\Windows</Filter>
     </ClCompile>
     <ClCompile Include="bar_main.cpp">
-      <Filter>File di intestazione</Filter>
-    </ClCompile>
-    <ClCompile Include="prompt_main.cpp">
-      <Filter>File di intestazione</Filter>
+      <Filter>File di origine\Modules</Filter>
     </ClCompile>
     <ClCompile Include="bottom_main.cpp">
-      <Filter>File di intestazione</Filter>
+      <Filter>File di origine\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="prompt_main.cpp">
+      <Filter>File di origine\Modules</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

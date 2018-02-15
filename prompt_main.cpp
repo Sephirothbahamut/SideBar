@@ -5,15 +5,11 @@ extern int WINDOW_HEIGHT;
 extern int WINDOW_MIN_X;
 extern int WINDOW_SPEED;
 
-extern sf::Texture pt_texture;
-extern sf::Sprite pt_sprite;
-
 extern int PROMPT_HEIGHT;
-extern bool TEST;
+
 
 int prompt_main()
 	{
-
 	//create terminal window beg
 	STARTUPINFO prompt_startupinfo;
 	PROCESS_INFORMATION prompt_processinfo;
@@ -75,6 +71,5 @@ int prompt_main()
 	// Close prompt process and thread handles.
 	CloseHandle(prompt_processinfo.hProcess);
 	CloseHandle(prompt_processinfo.hThread);
-	std::cout << "Terminal subprocess closed" << std::endl;
 	return(0);
 	}

@@ -71,16 +71,16 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\Sephi\Documents\Visual Studio 2017\Projects\SFML\External Libraries\SFML-2.4.2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Sephi\Documents\Visual Studio 2017\Projects\SFML\External Libraries\SFML-2.4.2\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFML-2.4.2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFML-2.4.2\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>C:\Users\Sephi\Documents\Visual Studio 2017\Projects\SFML\External Libraries\SFML-2.4.2\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\Sephi\Documents\Visual Studio 2017\Projects\SFML\External Libraries\SFML-2.4.2\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFGUI\include;C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFML-2.4.2\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFGUI-0.3.2\lib;C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFML-2.4.2\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -126,7 +126,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFGUI-0.3.2\include;C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -134,7 +134,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-main.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFML-2.4.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFML-2.4.2\lib;C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFGUI-0.3.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

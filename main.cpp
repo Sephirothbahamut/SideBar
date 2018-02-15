@@ -1,5 +1,5 @@
 #include "modules.h"
-
+#include <thread>
 
 #if defined(UNICODE) || defined(_UNICODE)
 #define tcout std::wcout
@@ -24,12 +24,10 @@ int BOTTOM_BAR; //bool
 int PROMPT; //bool
 
 sf::Texture pt_texture;
-sf::Sprite pt_sprite;
 
 int PROMPT_HEIGHT;
 
 //program
-
 int main()
 	{
 #ifdef _DEBUG
@@ -40,8 +38,9 @@ int main()
 	Win::SetExeDirectory();
 #ifdef _DEBUG
 	DWORD b = GetCurrentDirectory(MAX_PATH, NPath);
-	std::wcout << std::endl << std::endl << "NOW CURRENT DIR: " << NPath << std::endl << std::flush;
+	std::wcout << "NOW CURRENT DIR: " << NPath << std::endl << std::flush;
 #endif
+
 
 	//first inits
 	WINDOW_WIDTH = 160;
@@ -58,8 +57,8 @@ int main()
 	SEC_BB = 50;
 	BOTTOM_BAR = false;
 	PROMPT = false;
-	PROMPT_HEIGHT = Screen::get_height() - Screen::get_taskbar_height() + 2;
 	MAIN_STAY = false;
+	PROMPT_HEIGHT = Screen::get_height() - Screen::get_taskbar_height() + 2;
 
 	//Read settings beg
 	if (true)
@@ -114,18 +113,25 @@ int main()
 	pt_texture.setSmooth(true);
 	//Read settings end
 
+	std::thread THREAD_PROMPT;
+	std::thread THREAD_BOTTOM_BAR;
+
+
 	//create bottom bar
-	std::thread bottom_bar;
 	if (BOTTOM_BAR)
 		{
-		bottom_bar = std::thread(bottom_main);
+		THREAD_BOTTOM_BAR = std::thread(bottom_main);
 		}
 	//create prompt
-	std::thread prompt;
 	if (PROMPT)
 		{
-		prompt = std::thread(prompt_main);
+		THREAD_PROMPT = std::thread(prompt_main);
 		}
 
 	bar_main();
+
+	THREAD_BOTTOM_BAR.join();
+	THREAD_PROMPT.join();
+
+	return(0);
 	}

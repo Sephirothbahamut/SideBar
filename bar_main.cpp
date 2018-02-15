@@ -15,10 +15,8 @@ extern int SEC_BB;
 extern int MAIN_STAY; //bool
 
 extern sf::Texture pt_texture;
-extern sf::Sprite pt_sprite;
 
 extern int PROMPT_HEIGHT;
-extern bool TEST;
 
 int bar_main()
 	{
@@ -49,6 +47,17 @@ int bar_main()
 	bg_sprite.setScale(1, WINDOW_HEIGHT);
 	bg_sprite.setColor(sf::Color(SEC_RR, SEC_GG, SEC_BB, 255));
 	//Background end
+
+	//Settings beg
+	//sf::Texture se_texture;
+	//if (not se_texture.loadFromFile("textures/settings.png"))
+	//	{/*handle error*/
+	//	}
+	//sf::Sprite se_sprite(se_texture);
+	//se_sprite.setScale(1, 1);
+	//se_sprite.setPosition(WINDOW_WIDTH - 32, 0);
+	//se_sprite.setColor(sf::Color(255, 255, 255, 255));
+	//Settings end
 
 	//Particle system beg
 	sf::Sprite pt_sprite(pt_texture);
@@ -94,7 +103,7 @@ int bar_main()
 	while (window.isOpen())
 		{
 		//Window move beg
-		if(MAIN_STAY)
+		if(not MAIN_STAY)
 			{
 			int mx = sf::Mouse::getPosition().x;
 			int my = sf::Mouse::getPosition().y;
@@ -154,6 +163,35 @@ int bar_main()
 					{
 					btn.mouse_pressed(mouse_pos);
 					}
+				/*if ((mouse_pos.x > se_sprite.getPosition().x) and (mouse_pos.y < 32))
+					{
+					// additional information
+					STARTUPINFO si;
+					PROCESS_INFORMATION pi;
+
+					// set the size of the structures
+					ZeroMemory(&si, sizeof(si));
+					si.cb = sizeof(si);
+					ZeroMemory(&pi, sizeof(pi));
+
+					// start the program up
+					CreateProcess(L"SideBarSettings.exe",   // the path
+						NULL,			// Command line
+						NULL,		    // Process handle not inheritable
+						NULL,           // Thread handle not inheritable
+						FALSE,          // Set handle inheritance to FALSE
+						0,              // No creation flags
+						NULL,           // Use parent's environment block
+						NULL,           // Use parent's starting directory 
+						&si,            // Pointer to STARTUPINFO structure
+						&pi             // Pointer to PROCESS_INFORMATION structure (removed extra parentheses)
+					);
+					// Close process and thread handles. 
+					CloseHandle(pi.hProcess);
+					CloseHandle(pi.hThread);
+
+					terminate();
+					}*/
 				}
 			else if (event.type == sf::Event::MouseButtonReleased)
 				{
@@ -166,6 +204,9 @@ int bar_main()
 		window.clear(sf::Color::Transparent);
 		if (not outside)
 			{
+			bg_sprite.setColor(sf::Color(SEC_RR, SEC_GG, SEC_BB));
+			pt_sprite.setColor(sf::Color(SEC_RR, SEC_GG, SEC_BB));
+
 			//step
 			ps.step();
 			for (BarButton& btn : buttons)
@@ -181,6 +222,7 @@ int bar_main()
 
 			ps.draw(window);
 			window.draw(clock);
+			//window.draw(se_sprite);
 			for (BarButton& btn : buttons)
 				{
 				window.draw(btn);
@@ -188,5 +230,6 @@ int bar_main()
 			}
 		window.display();
 		}
-	std::exit(0);
+
+	return(0);
 	}
