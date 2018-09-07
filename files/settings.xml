@@ -9,9 +9,10 @@
 	</colors>
 	<other>
 		<particles amount="8"/>
-		<anim_speed value="6"/>
+		<win_speed value="6"/>
 		<vertical_spacing value="12"/>
 		<bottom_bar enabled="1"/>
-		<prompt enabled="1"/>
+		<prompt enabled="0"/>
+		<stay enabled="0"/>
 	</other>
 </settings>

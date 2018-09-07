@@ -62,8 +62,8 @@ int bar_main()
 	//Particle system beg
 	sf::Sprite pt_sprite(pt_texture);
 	pt_sprite.setColor(sf::Color(MAIN_RR, MAIN_GG, MAIN_BB, 76.5));
-
-	PartSystem ps = PartSystem(pt_sprite, 180, 15, 1.2, 0.4, 0.8, 0.2, 90, 15, PART_AMOUNT, 1, sf::FloatRect(WINDOW_WIDTH + 16, 0, 0, WINDOW_HEIGHT));
+	PartSystem ps(pt_sprite, 180, 15, 1.2, 0.4, 0.8, 0.2, 90, 15, PART_AMOUNT, 1, sf::FloatRect(WINDOW_WIDTH + 16, 0, 0, WINDOW_HEIGHT));
+	
 	//Particle system end
 	//Elements beg
 	BarnackClock clock = BarnackClock((WINDOW_WIDTH / 2), 84, MAIN_RR, MAIN_GG, MAIN_BB);

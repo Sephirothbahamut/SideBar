@@ -163,6 +163,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="bar_main.cpp" />
     <ClCompile Include="Maths.cpp" />
+    <ClCompile Include="OldParticle.cpp" />
+    <ClCompile Include="OldPartSystem.cpp" />
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="PartSystem.cpp" />
     <ClCompile Include="prompt_main.cpp" />
@@ -177,6 +179,8 @@
     <ClInclude Include="defines.h" />
     <ClInclude Include="Maths.h" />
     <ClInclude Include="modules.h" />
+    <ClInclude Include="OldParticle.h" />
+    <ClInclude Include="OldPartSystem.h" />
     <ClInclude Include="Particle.h" />
     <ClInclude Include="PartSystem.h" />
     <ClInclude Include="resource.h" />

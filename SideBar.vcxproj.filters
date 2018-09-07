@@ -28,6 +28,12 @@
     <Filter Include="File di origine\Modules">
       <UniqueIdentifier>{c5d0823e-f6c9-43b7-9bc2-f6025974128e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="File di intestazione\Old">
+      <UniqueIdentifier>{f6eeff31-2919-44e2-82b6-673167f0d347}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File di origine\Old">
+      <UniqueIdentifier>{beb05df0-1c9f-4468-b07e-f49588460417}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -48,9 +54,6 @@
     <ClCompile Include="Particle.cpp">
       <Filter>File di origine\Items</Filter>
     </ClCompile>
-    <ClCompile Include="PartSystem.cpp">
-      <Filter>File di origine\Items</Filter>
-    </ClCompile>
     <ClCompile Include="Win.cpp">
       <Filter>File di origine\Windows</Filter>
     </ClCompile>
@@ -68,6 +71,15 @@
     </ClCompile>
     <ClCompile Include="prompt_main.cpp">
       <Filter>File di origine\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="PartSystem.cpp">
+      <Filter>File di origine\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="OldParticle.cpp">
+      <Filter>File di origine\Old</Filter>
+    </ClCompile>
+    <ClCompile Include="OldPartSystem.cpp">
+      <Filter>File di origine\Old</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -89,9 +101,6 @@
     <ClInclude Include="Particle.h">
       <Filter>File di intestazione\Items</Filter>
     </ClInclude>
-    <ClInclude Include="PartSystem.h">
-      <Filter>File di intestazione\Items</Filter>
-    </ClInclude>
     <ClInclude Include="BarnackClock.h">
       <Filter>File di intestazione\Items</Filter>
     </ClInclude>
@@ -106,6 +115,15 @@
     </ClInclude>
     <ClInclude Include="modules.h">
       <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="PartSystem.h">
+      <Filter>File di intestazione\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="OldParticle.h">
+      <Filter>File di intestazione\Old</Filter>
+    </ClInclude>
+    <ClInclude Include="OldPartSystem.h">
+      <Filter>File di intestazione\Old</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

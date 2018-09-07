@@ -18,6 +18,11 @@ float Maths::random_range(float min, float max)
 	return((max - min) * ((float)rand() / (float)RAND_MAX) + min);
 	}
 
+float Maths::random_range(unsigned int min, unsigned int max)
+	{
+	return((max - min) * ((unsigned int)rand() / (unsigned int)RAND_MAX) + min);
+	}
+
 double Maths::lengthdir_x(double length, double angle)
 	{
 	return length * cos(angle * M_PI / 180);

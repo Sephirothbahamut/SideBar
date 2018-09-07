@@ -89,10 +89,10 @@ int main()
 			//part
 			xml::XMLElement* particles = other->FirstChildElement("particles");
 			particles->QueryIntAttribute("amount", &PART_AMOUNT);
-			//anim spd
-			xml::XMLElement* anim_speed = other->FirstChildElement("anim_speed");
-			particles->QueryIntAttribute("value", &WINDOW_SPEED);
-			//anim spd
+			//win spd
+			xml::XMLElement* win_speed = other->FirstChildElement("win_speed");
+			win_speed->QueryIntAttribute("value", &WINDOW_SPEED);
+			//vert spacing
 			xml::XMLElement* vertical_spacing = other->FirstChildElement("vertical_spacing");
 			vertical_spacing->QueryIntAttribute("value", &VERTICAL_SPACING);
 			//bottom bar
@@ -101,6 +101,7 @@ int main()
 			//prompt bar
 			xml::XMLElement* prompt = other->FirstChildElement("prompt");
 			prompt->QueryIntAttribute("enabled", &PROMPT);
+			//stay
 			xml::XMLElement* stay = other->FirstChildElement("stay");
 			stay->QueryIntAttribute("enabled", &MAIN_STAY);
 			}
