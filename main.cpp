@@ -22,6 +22,7 @@ int SEC_BB;
 int MAIN_STAY; //bool
 int BOTTOM_BAR; //bool
 int PROMPT; //bool
+int WALLPAPER; //bool
 
 sf::Texture pt_texture;
 
@@ -55,8 +56,11 @@ int main()
 	SEC_RR = 0;
 	SEC_GG = 0;
 	SEC_BB = 50;
+
 	BOTTOM_BAR = false;
 	PROMPT = false;
+	WALLPAPER = true;
+
 	MAIN_STAY = false;
 	PROMPT_HEIGHT = Screen::get_height() - Screen::get_taskbar_height() + 2;
 
@@ -101,6 +105,9 @@ int main()
 			//prompt bar
 			xml::XMLElement* prompt = other->FirstChildElement("prompt");
 			prompt->QueryIntAttribute("enabled", &PROMPT);
+			//wallpaper
+			xml::XMLElement* wallpaper = other->FirstChildElement("wallpaper");
+			wallpaper->QueryIntAttribute("enabled", &PROMPT);
 			//stay
 			xml::XMLElement* stay = other->FirstChildElement("stay");
 			stay->QueryIntAttribute("enabled", &MAIN_STAY);
@@ -116,6 +123,7 @@ int main()
 
 	std::thread THREAD_PROMPT;
 	std::thread THREAD_BOTTOM_BAR;
+	std::thread THREAD_WALLPAPER;
 
 
 	//create bottom bar
@@ -128,11 +136,17 @@ int main()
 		{
 		THREAD_PROMPT = std::thread(prompt_main);
 		}
+	//create wallpaper
+	if (WALLPAPER)
+		{
+		THREAD_WALLPAPER = std::thread(wallpaper_main);
+		}
 
 	bar_main();
 
 	THREAD_BOTTOM_BAR.join();
 	THREAD_PROMPT.join();
+	THREAD_WALLPAPER.join();
 
 	return(0);
 	}

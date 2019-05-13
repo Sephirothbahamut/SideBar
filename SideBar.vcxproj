@@ -110,10 +110,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFML-2.4.2x64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-main-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFML-2.4.2x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -126,7 +129,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFGUI-0.3.2\include;C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFML-2.4.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -147,12 +150,15 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFML-2.4.2x64\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFML-2.4.2x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -166,10 +172,12 @@
     <ClCompile Include="OldParticle.cpp" />
     <ClCompile Include="OldPartSystem.cpp" />
     <ClCompile Include="Particle.cpp" />
+    <ClCompile Include="particles.cpp" />
     <ClCompile Include="PartSystem.cpp" />
     <ClCompile Include="prompt_main.cpp" />
     <ClCompile Include="Screen.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
+    <ClCompile Include="wallpaper_main.cpp" />
     <ClCompile Include="Win.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -182,6 +190,7 @@
     <ClInclude Include="OldParticle.h" />
     <ClInclude Include="OldPartSystem.h" />
     <ClInclude Include="Particle.h" />
+    <ClInclude Include="particles.h" />
     <ClInclude Include="PartSystem.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Screen.h" />

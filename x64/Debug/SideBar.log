@@ -1,0 +1,3 @@
+﻿  Screen.cpp
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\screen.cpp(34): warning C4715: 'Screen::get_taskbar_height': not all control paths return a value
+  SideBar.vcxproj -> C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\x64\Debug\SideBar.exe

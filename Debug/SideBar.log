@@ -1,7 +1,10 @@
-﻿  bar_main.cpp
+﻿  wallpaper_main.cpp
 c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\win.h(13): warning C4091: 'static ': ignored on left of 'Win::handle_data' when no variable is declared
-c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\bar_main.cpp(47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\bar_main.cpp(64): warning C4244: 'argument': conversion from 'double' to 'sf::Uint8', possible loss of data
-c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\bar_main.cpp(65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\bar_main.cpp(65): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\wallpaper_main.cpp(37): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\wallpaper_main.cpp(79): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\wallpaper_main.cpp(82): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\wallpaper_main.cpp(83): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\wallpaper_main.cpp(85): warning C4244: 'initializing': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\wallpaper_main.cpp(86): warning C4244: 'initializing': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\wallpaper_main.cpp(117): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   SideBar.vcxproj -> C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Debug\SideBar.exe

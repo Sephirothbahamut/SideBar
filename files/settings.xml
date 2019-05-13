@@ -13,6 +13,7 @@
 		<vertical_spacing value="12"/>
 		<bottom_bar enabled="1"/>
 		<prompt enabled="0"/>
+		<wallpaper enabled="0"/>
 		<stay enabled="0"/>
 	</other>
 </settings>

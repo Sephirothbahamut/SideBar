@@ -81,6 +81,12 @@
     <ClCompile Include="OldPartSystem.cpp">
       <Filter>File di origine\Old</Filter>
     </ClCompile>
+    <ClCompile Include="wallpaper_main.cpp">
+      <Filter>File di origine\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="particles.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="defines.h">
@@ -124,6 +130,9 @@
     </ClInclude>
     <ClInclude Include="OldPartSystem.h">
       <Filter>File di intestazione\Old</Filter>
+    </ClInclude>
+    <ClInclude Include="particles.h">
+      <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

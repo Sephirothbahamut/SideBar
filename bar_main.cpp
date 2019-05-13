@@ -136,6 +136,7 @@ int bar_main()
 					window.setFramerateLimit(5);
 					}
 				}
+			
 			window.setPosition(sf::Vector2i(wx, 0));
 			}
 		//Window move end

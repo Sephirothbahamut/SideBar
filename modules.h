@@ -24,3 +24,4 @@
 int bar_main();
 int prompt_main();
 int bottom_main();
+int wallpaper_main();

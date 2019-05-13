@@ -17,9 +17,18 @@ AppVersion={#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
-OutputBaseFilename=SideBarSetup
+OutputBaseFilename=SideBarSetup    
+UninstallDisplayIcon={app}\SideBar.exe
 Compression=lzma
 SolidCompression=yes
+; "ArchitecturesInstallIn64BitMode=x64" requests that the install be
+; done in "64-bit mode" on x64, meaning it should use the native
+; 64-bit Program Files directory and the 64-bit view of the registry.
+; On all other architectures it will install in "32-bit mode".
+ArchitecturesInstallIn64BitMode=x64
+; Note: We don't set ProcessorsAllowed because we want this
+; installation to run on all architectures (including Itanium,
+; since it's capable of running 32-bit code too).
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -28,17 +37,26 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\SideBar.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\sfgui.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\sfml-audio-2.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\sfml-graphics-2.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\sfml-network-2.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\sfml-system-2.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\sfml-window-2.dll"; DestDir: "{app}"; Flags: ignoreversion
+; Install MyProg-x64.exe if running in 64-bit mode (x64; see above),
+; MyProg.exe otherwise.
+Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\x64\Release\SideBar.exe"; DestDir: "{app}"; Flags: ignoreversion; Check: Is64BitInstallMode
+Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\x64\Release\sfgui.dll"; DestDir: "{app}"; Flags: ignoreversion; Check: Is64BitInstallMode
+Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\x64\Release\sfml-audio-2.dll"; DestDir: "{app}"; Flags: ignoreversion; Check: Is64BitInstallMode
+Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\x64\Release\sfml-graphics-2.dll"; DestDir: "{app}"; Flags: ignoreversion; Check: Is64BitInstallMode
+Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\x64\Release\sfml-network-2.dll"; DestDir: "{app}"; Flags: ignoreversion; Check: Is64BitInstallMode
+Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\x64\Release\sfml-system-2.dll"; DestDir: "{app}"; Flags: ignoreversion; Check: Is64BitInstallMode
+Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\x64\Release\sfml-window-2.dll"; DestDir: "{app}"; Flags: ignoreversion; Check: Is64BitInstallMode
+Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\SideBar.exe"; DestDir: "{app}"; Flags: ignoreversion; Check: not Is64BitInstallMode
+Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\sfgui.dll"; DestDir: "{app}"; Flags: ignoreversion; Check: not Is64BitInstallMode
+Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\sfml-audio-2.dll"; DestDir: "{app}"; Flags: ignoreversion; Check: not Is64BitInstallMode
+Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\sfml-graphics-2.dll"; DestDir: "{app}"; Flags: ignoreversion; Check: not Is64BitInstallMode
+Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\sfml-network-2.dll"; DestDir: "{app}"; Flags: ignoreversion; Check: not Is64BitInstallMode
+Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\sfml-system-2.dll"; DestDir: "{app}"; Flags: ignoreversion; Check: not Is64BitInstallMode
+Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\sfml-window-2.dll"; DestDir: "{app}"; Flags: ignoreversion; Check: not Is64BitInstallMode
 
-Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\files\*"; DestDir: "{app}\files"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\fonts\*"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs
-Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\Release\textures\*"; DestDir: "{app}\textures"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\x64\Release\files\*"; DestDir: "{app}\files"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\x64\Release\fonts\*"; DestDir: "{app}\fonts"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\x64\Release\textures\*"; DestDir: "{app}\textures"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
