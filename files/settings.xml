@@ -13,7 +13,24 @@
 		<vertical_spacing value="12"/>
 		<bottom_bar enabled="1"/>
 		<prompt enabled="0"/>
-		<wallpaper enabled="0"/>
+		<wallpaper enabled="1"/>
 		<stay enabled="0"/>
 	</other>
+	<sidebar>
+		<clock/>
+		<button text = "Bing" action = "http://www.bing.com/"/>
+		<button text = "Hotmail" action = "http://www.outlook.live.com/"/>
+		<button text = "Orari Unitn" action = "http://webapps.unitn.it/Orari/it/Web/CalendarioCds/2016/10023/10114/2#2016-12-2"/>
+		<button text = "Telegram Web" action = "https://web.telegram.org/#/im"/>
+		<button text = "Netflix" action = "https://www.netflix.com/browse"/>
+		<button text = "Task Manager" action = "Taskmgr.exe"/>
+		<button text = "CMD" action = "cmd"/>
+		<button text = "localized google" action = "http://isearchfrom.com/"/>
+	</sidebar>
+	<wallpaper>
+		<image path = "textures/bg3.png" x = "-12" y = "0" x_offset = "8" y_offset = "0"/>
+		<image path = "textures/0.png" x = "-64" y = "500" x_offset = "64" y_offset = "64"/>
+		<image path = "textures/1.png" x = "0" y = "200" x_offset = "50" y_offset = "0"/>
+		<image path = "textures/2.png" x = "0" y = "600" x_offset = "20" y_offset = "0"/>
+	</wallpaper>
 </settings>

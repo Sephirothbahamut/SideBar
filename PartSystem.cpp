@@ -1,6 +1,4 @@
 ﻿#include "PartSystem.h"
-#include <iostream>
-#include <Windows.h>
 
 PartSystem::PartSystem(sf::Sprite sprite, float dir, float dir_offset, float speed, float speed_offset, float acc, float acc_offset, float size, float size_offset, unsigned int life, unsigned int life_offset, usi gen_amount, usi gen_alarm, sf::FloatRect generator)
 	{
@@ -20,8 +18,6 @@ PartSystem::PartSystem(sf::Sprite sprite, float dir, float dir_offset, float spe
 	this->gen_alarm = gen_alarm;
 	this->generator = generator;
 	this->alarm = 0;
-
-	debug();
 
 	alarm = 0;
 	}
@@ -69,18 +65,26 @@ void PartSystem::step()
 		}
 	}
 
+#include <iostream>
+void PartSystem::position_push(float x, float y, float force, float angle_min, float angle_max)
+	{
+
+	for (auto p : particles)
+		{
+		float dist = Maths::point_dist(x, y, p.getPosition().x, p.getPosition().y);
+		float applied_force = (dist > 1) ? (force / sqrt(dist)) : force;
+		if (applied_force < 0.1) { continue; }
+
+		float angle = Maths::point_angle(p.getPosition().x, p.getPosition().y, x, y);
+
+		if (angle <= angle_max && angle >= angle_min) { p.push(angle, force); }
+		}
+	}
+
 void PartSystem::draw(sf::RenderTarget & target)
 	{
 	for (Particle& p : particles)
 		{
 		target.draw(p);
 		}
-	}
-
-
-using std::cout;
-using std::endl;
-void PartSystem::debug()
-	{
-	cout << gen_alarm << " | " << alarm << endl;
 	}

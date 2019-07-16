@@ -1,90 +1,94 @@
-﻿  Autorun.cpp
-  BarButton.cpp
+﻿  BarButton.cpp
 BarButton.cpp(20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 BarButton.cpp(23): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-BarButton.cpp(41): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-BarButton.cpp(121): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-BarButton.cpp(134): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+BarButton.cpp(40): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+BarButton.cpp(119): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+BarButton.cpp(132): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   BarnackClock.cpp
-BarnackClock.cpp(22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-BarnackClock.cpp(23): warning C4244: 'argument': conversion from 'unsigned short' to 'sf::Uint8', possible loss of data
-BarnackClock.cpp(29): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-BarnackClock.cpp(30): warning C4244: 'argument': conversion from 'unsigned short' to 'sf::Uint8', possible loss of data
-BarnackClock.cpp(36): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-BarnackClock.cpp(37): warning C4244: 'argument': conversion from 'unsigned short' to 'sf::Uint8', possible loss of data
-BarnackClock.cpp(44): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-BarnackClock.cpp(45): warning C4244: 'argument': conversion from 'unsigned short' to 'sf::Uint8', possible loss of data
-BarnackClock.cpp(51): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-BarnackClock.cpp(52): warning C4244: 'argument': conversion from 'unsigned short' to 'sf::Uint8', possible loss of data
-BarnackClock.cpp(58): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-BarnackClock.cpp(59): warning C4244: 'argument': conversion from 'unsigned short' to 'sf::Uint8', possible loss of data
-BarnackClock.cpp(64): warning C4244: 'argument': conversion from 'unsigned short' to 'sf::Uint8', possible loss of data
-BarnackClock.cpp(67): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-BarnackClock.cpp(69): warning C4244: 'argument': conversion from 'unsigned short' to 'sf::Uint8', possible loss of data
-BarnackClock.cpp(72): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-BarnackClock.cpp(85): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-BarnackClock.cpp(86): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+BarnackClock.cpp(8): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+BarnackClock.cpp(24): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+BarnackClock.cpp(25): warning C4244: 'argument': conversion from 'unsigned short' to 'sf::Uint8', possible loss of data
+BarnackClock.cpp(31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+BarnackClock.cpp(32): warning C4244: 'argument': conversion from 'unsigned short' to 'sf::Uint8', possible loss of data
+BarnackClock.cpp(38): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+BarnackClock.cpp(39): warning C4244: 'argument': conversion from 'unsigned short' to 'sf::Uint8', possible loss of data
+BarnackClock.cpp(46): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+BarnackClock.cpp(47): warning C4244: 'argument': conversion from 'unsigned short' to 'sf::Uint8', possible loss of data
+BarnackClock.cpp(53): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+BarnackClock.cpp(54): warning C4244: 'argument': conversion from 'unsigned short' to 'sf::Uint8', possible loss of data
+BarnackClock.cpp(60): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+BarnackClock.cpp(61): warning C4244: 'argument': conversion from 'unsigned short' to 'sf::Uint8', possible loss of data
+BarnackClock.cpp(66): warning C4244: 'argument': conversion from 'unsigned short' to 'sf::Uint8', possible loss of data
+BarnackClock.cpp(69): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+BarnackClock.cpp(71): warning C4244: 'argument': conversion from 'unsigned short' to 'sf::Uint8', possible loss of data
+BarnackClock.cpp(74): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 BarnackClock.cpp(87): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+BarnackClock.cpp(88): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+BarnackClock.cpp(89): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   bottom_main.cpp
-c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\Win.h(13): warning C4091: 'static ': ignored on left of 'Win::handle_data' when no variable is declared
-bottom_main.cpp(41): warning C4244: 'argument': conversion from 'double' to 'sf::Uint8', possible loss of data
-bottom_main.cpp(43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-bottom_main.cpp(43): warning C4305: 'argument': truncation from 'double' to 'float'
+bottom_main.cpp(27): warning C4244: 'argument': conversion from 'double' to 'sf::Uint8', possible loss of data
+bottom_main.cpp(29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+bottom_main.cpp(29): warning C4305: 'argument': truncation from 'double' to 'float'
   main.cpp
-c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\Win.h(13): warning C4091: 'static ': ignored on left of 'Win::handle_data' when no variable is declared
   bar_main.cpp
-c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\Win.h(13): warning C4091: 'static ': ignored on left of 'Win::handle_data' when no variable is declared
-bar_main.cpp(47): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-bar_main.cpp(64): warning C4244: 'argument': conversion from 'double' to 'sf::Uint8', possible loss of data
-bar_main.cpp(65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-bar_main.cpp(65): warning C4305: 'argument': truncation from 'double' to 'float'
+bar_main.cpp(35): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+bar_main.cpp(52): warning C4244: 'argument': conversion from 'double' to 'sf::Uint8', possible loss of data
+bar_main.cpp(53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+bar_main.cpp(53): warning C4305: 'argument': truncation from 'double' to 'float'
   Maths.cpp
-Maths.cpp(16): warning C4244: 'return': conversion from 'unsigned int' to 'float', possible loss of data
+Maths.cpp(17): warning C4244: 'return': conversion from 'unsigned int' to 'float', possible loss of data
+  mouse_effects_main.cpp
   OldParticle.cpp
   OldPartSystem.cpp
   Particle.cpp
-Particle.cpp(11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Particle.cpp(12): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Particle.cpp(13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Particle.cpp(14): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 Particle.cpp(15): warning C4244: '=': conversion from 'float' to 'unsigned int', possible loss of data
 Particle.cpp(42): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-Particle.cpp(60): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-Particle.cpp(61): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-Particle.cpp(63): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-Particle.cpp(64): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\Maths.h(15): warning C4244: 'return': conversion from 'long double' to 'float', possible loss of data
+  Particle.cpp(11): note: see reference to function template instantiation 't Maths::lengthdir_x<float>(t,t)' being compiled
+          with
+          [
+              t=float
+          ]
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\Maths.h(20): warning C4244: 'return': conversion from 'long double' to 'float', possible loss of data
+  Particle.cpp(12): note: see reference to function template instantiation 't Maths::lengthdir_y<float>(t,t)' being compiled
+          with
+          [
+              t=float
+          ]
   particles.cpp
-particles.cpp(35): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-particles.cpp(36): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 particles.cpp(75): warning C4244: 'initializing': conversion from 'float' to 'unsigned int', possible loss of data
-particles.cpp(78): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-particles.cpp(79): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-particles.cpp(80): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-particles.cpp(81): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 particles.cpp(103): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
-particles.cpp(121): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-particles.cpp(122): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
-particles.cpp(124): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-particles.cpp(125): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\Maths.h(15): warning C4244: 'return': conversion from 'long double' to 'float', possible loss of data
+  particles.cpp(35): note: see reference to function template instantiation 't Maths::lengthdir_x<float>(t,t)' being compiled
+          with
+          [
+              t=float
+          ]
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\Maths.h(20): warning C4244: 'return': conversion from 'long double' to 'float', possible loss of data
+  particles.cpp(36): note: see reference to function template instantiation 't Maths::lengthdir_y<float>(t,t)' being compiled
+          with
+          [
+              t=float
+          ]
   PartSystem.cpp
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\Maths.h(32): warning C4244: 'return': conversion from 'long double' to 'float', possible loss of data
+  PartSystem.cpp(78): note: see reference to function template instantiation 't Maths::point_angle<T>(t,t,t,t)' being compiled
+          with
+          [
+              t=float,
+              T=float
+          ]
   prompt_main.cpp
-c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\Win.h(13): warning C4091: 'static ': ignored on left of 'Win::handle_data' when no variable is declared
-  Screen.cpp
+  SbItem.cpp
+  settings.cpp
   tinyxml2.cpp
   wallpaper_main.cpp
-c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\Win.h(13): warning C4091: 'static ': ignored on left of 'Win::handle_data' when no variable is declared
-wallpaper_main.cpp(37): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-wallpaper_main.cpp(82): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-wallpaper_main.cpp(83): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-wallpaper_main.cpp(85): warning C4244: 'initializing': conversion from 'unsigned int' to 'float', possible loss of data
-wallpaper_main.cpp(86): warning C4244: 'initializing': conversion from 'unsigned int' to 'float', possible loss of data
-wallpaper_main.cpp(117): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+wallpaper_main.cpp(41): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
   Win.cpp
-c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\Win.h(13): warning C4091: 'static ': ignored on left of 'Win::handle_data' when no variable is declared
-Win.cpp(69): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
+Win.cpp(124): warning C4267: 'argument': conversion from 'size_t' to 'DWORD', possible loss of data
      Creating library C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\x64\Release\SideBar.lib and object C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\x64\Release\SideBar.exp
   Generating code
-c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\screen.cpp(33): warning C4715: 'Screen::get_taskbar_height': not all control paths return a value
-  All 862 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+c:\users\sephirothbahamut\documents\programming\vs\projects\sfml\sidebar\sidebar\win.cpp(58): warning C4715: 'Win::Screen::get_taskbar_height': not all control paths return a value
+  All 1131 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   Finished generating code
   SideBar.vcxproj -> C:\Users\Sephirothbahamut\Documents\Programming\VS\Projects\SFML\SideBar\x64\Release\SideBar.exe

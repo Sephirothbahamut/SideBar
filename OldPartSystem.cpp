@@ -1,7 +1,6 @@
 /*
 #include "OldPartSystem.h"
 #include <iostream>
-#include <Windows.h>
 #include "OldPartSystem.h"
 
 OldPartSystem::OldPartSystem(sf::Sprite sprite, float dir, float dir_offset, float speed, float speed_offset, float acc, float acc_offset, float size, float size_offset, float life, float life_offset, usi gen_amount, usi gen_alarm, sf::FloatRect generator)

@@ -31,6 +31,6 @@ class PartSystem
 			usi gen_amount, usi gen_alarm, sf::FloatRect generator);
 		~PartSystem();
 		void step();
+		void position_push(float x, float y, float force, float angle_min = 0, float angle_max = 360);
 		void draw(sf::RenderTarget& target);
-		void debug();
 	};

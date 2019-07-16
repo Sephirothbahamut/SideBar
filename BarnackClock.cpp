@@ -3,8 +3,10 @@
 #include <iostream>
 #include <string>
 
-BarnackClock::BarnackClock(double x, double y, usi red, usi green, usi blue)
+BarnackClock::BarnackClock(double x, double y, usi red, usi green, usi blue) : SbItem(Settings::sidebar_element::TYPE::clock)
 	{
+	collision = sf::IntRect(x + -80, y, 160, 160);
+
 	if (not texture.loadFromFile("textures/clock/t_clock.png"))
 		{/*handle error*/
 		}
@@ -19,21 +21,21 @@ BarnackClock::BarnackClock(double x, double y, usi red, usi green, usi blue)
 	clock.setTexture(texture);
 	clock.setTextureRect(sf::IntRect(0, 0, 160, 160));
 	clock.setOrigin(80, 80);
-	clock.setPosition(x, y);
+	clock.setPosition(x, y + 80);
 	clock.setColor(sf::Color(red, green, blue, 255));
 	//analog
 	analog_field = sf::Sprite();
 	analog_field.setTexture(texture);
 	analog_field.setTextureRect(sf::IntRect(160, 80, 82, 32));
 	analog_field.setOrigin(82 / 2, 32 / 2);
-	analog_field.setPosition(x, y + (160 / 5));
+	analog_field.setPosition(x, y + 80 + (160 / 5));
 	analog_field.setColor(sf::Color(red, green, blue, 255));
 	//day
 	day_field = sf::Sprite();
 	day_field.setTexture(texture);
 	day_field.setTextureRect(sf::IntRect(160, 120, 54, 32));
 	day_field.setOrigin(54 / 2, 32 / 2);
-	day_field.setPosition(x, y - (160 / 5));
+	day_field.setPosition(x, y + 80 - (160 / 5));
 	day_field.setColor(sf::Color(red, green, blue, 255));
 	//pointers
 	//seconds
@@ -41,21 +43,21 @@ BarnackClock::BarnackClock(double x, double y, usi red, usi green, usi blue)
 	secs.setTexture(texture);
 	secs.setTextureRect(sf::IntRect(160, 0, 32, 80));
 	secs.setOrigin(15, 72);
-	secs.setPosition(x, y);
+	secs.setPosition(x, y + 80);
 	secs.setColor(sf::Color(red, green, blue, 255));
 	//minutes
 	mins = sf::Sprite();
 	mins.setTexture(texture);
 	mins.setTextureRect(sf::IntRect(192, 0, 32, 80));
 	mins.setOrigin(15, 72);
-	mins.setPosition(x, y);
+	mins.setPosition(x, y + 80);
 	mins.setColor(sf::Color(red, green, blue, 255));
 	//hours
 	hous = sf::Sprite();
 	hous.setTexture(texture);
 	hous.setTextureRect(sf::IntRect(224, 0, 32, 80));
 	hous.setOrigin(15, 72);
-	hous.setPosition(x, y);
+	hous.setPosition(x, y + 80);
 	hous.setColor(sf::Color(red, green, blue, 255));
 	//end
 	//TEXTS
@@ -64,12 +66,12 @@ BarnackClock::BarnackClock(double x, double y, usi red, usi green, usi blue)
 	analog.setFillColor(sf::Color(red, green, blue, 255));
 	analog.setCharacterSize(12);
 	analog.setString("00:00:00");
-	analog.setPosition(x - 21, y + (160 / 5) - 7);
+	analog.setPosition(x - 21, y + 80 + (160 / 5) - 7);
 	day.setFont(font);
 	day.setFillColor(sf::Color(red, green, blue, 255));
 	day.setCharacterSize(15);
 	day.setString("MMM");
-	day.setPosition(x - 14, y - (160 / 5) - 9);
+	day.setPosition(x - 14, y + 80 - (160 / 5) - 9);
 	}
 
 
@@ -115,3 +117,9 @@ void BarnackClock::draw(sf::RenderTarget & target, sf::RenderStates states) cons
 	target.draw(mins);
 	target.draw(hous);
 	}
+
+void BarnackClock::mouse_moved(sf::Vector2f mouse_pos) {}
+
+void BarnackClock::mouse_moved(sf::Vector2f mouse_pos_previous, sf::Vector2f mouse_pos) {}
+void BarnackClock::mouse_pressed(sf::Vector2f mouse_pos) {}
+void BarnackClock::mouse_released(sf::Vector2f mouse_pos) {}

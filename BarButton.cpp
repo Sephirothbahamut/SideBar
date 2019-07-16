@@ -7,7 +7,7 @@ void BarButton::draw(sf::RenderTarget & target, sf::RenderStates states) const
 	target.draw(text);
 	}
 
-BarButton::BarButton(std::string text, std::string action, double x, double y, sf::Texture& texture, sf::Font& font, sf::Color &color)
+BarButton::BarButton(std::string text, std::string action, double x, double y, sf::Texture& texture, sf::Font& font, sf::Color &color) : SbItem(Settings::sidebar_element::TYPE::button)
 	{
 	this->action = action;
 	current = 0;
@@ -16,17 +16,16 @@ BarButton::BarButton(std::string text, std::string action, double x, double y, s
 	sprite = sf::Sprite();
 	sprite.setTexture(texture);
 	sprite.setTextureRect(sf::IntRect(0, 0, 142, 48));
-	sprite.setOrigin(142 / 2, 48 / 2);
+	sprite.setOrigin(142 / 2, 8);
 	sprite.setPosition(x, y);
 	sprite.setColor(color);
 
-	collision = sf::IntRect(x+-64, y+-16, 127, 31);
+	collision = sf::IntRect(x - 64, y, 127, 31);
 
 	int xx = 0;
 	anim = std::vector<sf::IntRect>();
 	for (usi i = 0; i < 16; i++)
 		{
-		//std::cout << xx << std::endl;
 		anim.push_back(sf::IntRect(xx, 0, 142, 48));
 		xx += 142;
 		}
@@ -37,7 +36,7 @@ BarButton::BarButton(std::string text, std::string action, double x, double y, s
 	this->text.setOutlineColor(color);
 	this->text.setCharacterSize(12);
 	this->text.setString(text);
-	this->text.setOrigin(58, 7);
+	this->text.setOrigin(58, 8 - 16);
 	this->text.setPosition(x, y);
 	}
 
@@ -100,7 +99,6 @@ void BarButton::mouse_released(sf::Vector2f mouse_pos)
 	if (collision.contains(sf::Vector2i(mouse_pos)))
 		{
 		CA2W ca2w(action.c_str());
-		//std::cout << "opening " << text.getString().toAnsiString() << std::endl;
 		ShellExecute(null, L"open", ca2w, null, null, SW_SHOW);
 		}
 	}

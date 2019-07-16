@@ -1,9 +1,8 @@
 #pragma once
 
-#include <SFML\Graphics.hpp>
-#include "defines.h"
+#include "SbItem.h"
 
-class BarnackClock : public sf::Drawable
+class BarnackClock : public SbItem
 	{
 	sf::Sprite clock;
 	sf::Sprite mins;
@@ -23,8 +22,12 @@ class BarnackClock : public sf::Drawable
 	virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 	public:
+		void mouse_moved(sf::Vector2f mouse_pos);
+		void mouse_moved(sf::Vector2f mouse_pos_previous, sf::Vector2f mouse_pos);
+		void mouse_pressed(sf::Vector2f mouse_pos);
+		void mouse_released(sf::Vector2f mouse_pos);
 		void step();
-		BarnackClock(double x, double y, usi red, usi green, usi blue);
+		BarnackClock(double x /*middle*/, double y /*top*/, usi red, usi green, usi blue);
 		~BarnackClock();
 	};
 

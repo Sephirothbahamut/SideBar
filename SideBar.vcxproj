@@ -98,7 +98,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-main-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-main-d.lib;%(AdditionalDependencies);gdiplus.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFML-2.4.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -115,7 +115,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-main-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-main-d.lib;%(AdditionalDependencies);gdiplus.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFML-2.4.2x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -136,7 +136,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-main.lib;%(AdditionalDependencies);gdiplus.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFML-2.4.2\lib;C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFGUI-0.3.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -157,31 +157,31 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-main.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-main.lib;%(AdditionalDependencies);gdiplus.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>C:\Users\Sephirothbahamut\Documents\Programming\VS\Libraries\SFML-2.4.2x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Autorun.cpp" />
     <ClCompile Include="BarButton.cpp" />
     <ClCompile Include="BarnackClock.cpp" />
     <ClCompile Include="bottom_main.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="bar_main.cpp" />
     <ClCompile Include="Maths.cpp" />
+    <ClCompile Include="mouse_effects_main.cpp" />
     <ClCompile Include="OldParticle.cpp" />
     <ClCompile Include="OldPartSystem.cpp" />
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="particles.cpp" />
     <ClCompile Include="PartSystem.cpp" />
     <ClCompile Include="prompt_main.cpp" />
-    <ClCompile Include="Screen.cpp" />
+    <ClCompile Include="SbItem.cpp" />
+    <ClCompile Include="settings.cpp" />
     <ClCompile Include="tinyxml2.cpp" />
     <ClCompile Include="wallpaper_main.cpp" />
     <ClCompile Include="Win.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Autorun.h" />
     <ClInclude Include="BarButton.h" />
     <ClInclude Include="BarnackClock.h" />
     <ClInclude Include="defines.h" />
@@ -193,7 +193,8 @@
     <ClInclude Include="particles.h" />
     <ClInclude Include="PartSystem.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="Screen.h" />
+    <ClInclude Include="SbItem.h" />
+    <ClInclude Include="settings.h" />
     <ClInclude Include="tinyxml2.h" />
     <ClInclude Include="Win.h" />
   </ItemGroup>

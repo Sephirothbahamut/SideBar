@@ -1,33 +1,21 @@
 #include "modules.h"
 
-extern int WINDOW_WIDTH;
-extern int WINDOW_HEIGHT;
-extern int WINDOW_MIN_X;
-extern int WINDOW_SPEED;
-extern int VERTICAL_SPACING;
-extern int PART_AMOUNT;
-extern int MAIN_RR;
-extern int MAIN_GG;
-extern int MAIN_BB;
-extern int SEC_RR;
-extern int SEC_GG;
-extern int SEC_BB;
-extern int MAIN_STAY; //bool
-
 extern sf::Texture pt_texture;
 
-extern int PROMPT_HEIGHT;
+extern Settings settings;
 
 int bar_main()
 	{
+	int screen_max_x = Win::Screen::get_width();
 	//create window
-	sf::RenderWindow window(sf::VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "SideBar", sf::Style::None);
-	window.setPosition({ (Screen::get_width() - WINDOW_WIDTH), 0 });
+	sf::RenderWindow window(sf::VideoMode(settings.window_width, settings.window_height), "SideBar", sf::Style::None);
+	window.setPosition({ (screen_max_x - settings.window_width), 0 });
+
 	window.setFramerateLimit(60);
 	window.setVerticalSyncEnabled(true);
 	HWND windows_window = window.getSystemHandle();
 	//always on top
-	SetWindowPos(windows_window, HWND_TOPMOST, WINDOW_MIN_X, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
+	SetWindowPos(windows_window, HWND_TOPMOST, settings.window_min_x, 0, 0, 0, SWP_NOMOVE | SWP_NOSIZE);
 	//do not show in toolbar 
 	SetWindowLong(windows_window, GWL_EXSTYLE, WS_EX_TOOLWINDOW);
 
@@ -44,8 +32,8 @@ int bar_main()
 		{/*handle error*/
 		}
 	sf::Sprite bg_sprite(bg_texture);
-	bg_sprite.setScale(1, WINDOW_HEIGHT);
-	bg_sprite.setColor(sf::Color(SEC_RR, SEC_GG, SEC_BB, 255));
+	bg_sprite.setScale(1, settings.window_height);
+	bg_sprite.setColor(sf::Color(settings.sec_rr, settings.sec_gg, settings.sec_bb, 255));
 	//Background end
 
 	//Settings beg
@@ -61,18 +49,17 @@ int bar_main()
 
 	//Particle system beg
 	sf::Sprite pt_sprite(pt_texture);
-	pt_sprite.setColor(sf::Color(MAIN_RR, MAIN_GG, MAIN_BB, 76.5));
-	PartSystem ps(pt_sprite, 180, 15, 1.2, 0.4, 0.8, 0.2, 90, 15, PART_AMOUNT, 1, sf::FloatRect(WINDOW_WIDTH + 16, 0, 0, WINDOW_HEIGHT));
+	pt_sprite.setColor(sf::Color(settings.main_rr, settings.main_gg, settings.main_bb, 76.5));
+	PartSystem ps(pt_sprite, 180, 15, 1.2, 0.4, 0.8, 0.2, 90, 15, settings.part_amount, 1, sf::FloatRect(settings.window_width + 16, 0, 0, settings.window_height));
 	
 	//Particle system end
-	//Elements beg
-	BarnackClock clock = BarnackClock((WINDOW_WIDTH / 2), 84, MAIN_RR, MAIN_GG, MAIN_BB);
-	std::vector<BarButton> buttons = std::vector<BarButton>();
 
-	//Read buttons beg
+	//Elements beg
+	std::vector<SbItem*> items;
+
 	sf::Texture btn_texture;
 	sf::Font btn_font;
-	{
+	
 	if (not btn_texture.loadFromFile("textures/t_button.png"))
 		{/*handle error*/
 		}
@@ -80,18 +67,25 @@ int bar_main()
 	if (not btn_font.loadFromFile("fonts/times.ttf"))
 		{/*handle herror*/
 		}
-	xml::XMLDocument file;
-	xml::XMLError res = file.LoadFile("files/buttons.xml");
-	xml::XMLNode* root = file.FirstChild();
-	xml::XMLNode* buttons_list = root->FirstChildElement("list");
-	usi yy = 200;
-	for (xml::XMLElement* e = buttons_list->FirstChildElement("button"); e != NULL; e = e->NextSiblingElement("button"))
+	usi yy = settings.vertical_spacing;
+	//Buttons beg
+
+	for (auto i : settings.sidebar_elements)
 		{
-		buttons.push_back(BarButton(e->Attribute("text"), e->Attribute("action"), 96, yy, btn_texture, btn_font, sf::Color(MAIN_RR, MAIN_GG, MAIN_BB, 255)));
-		yy += 32 + VERTICAL_SPACING;
+
+		switch(i.type)
+			{
+			case Settings::sidebar_element::TYPE::clock:
+				items.push_back(new BarnackClock((settings.window_width / 2), yy, settings.main_rr, settings.main_gg, settings.main_bb));
+				break;
+			case Settings::sidebar_element::TYPE::button:
+				items.push_back(new BarButton(i.text, i.action, 96, yy, btn_texture, btn_font, sf::Color(settings.main_rr, settings.main_gg, settings.main_bb, 255)));
+				break;
+			}
+
+		yy += items.back()->collision.height + settings.vertical_spacing;
 		}
-	}
-	//Read buttons end
+	//Buttons end
 	//Elements end
 
 	bool outside = false;
@@ -102,8 +96,10 @@ int bar_main()
 
 	while (window.isOpen())
 		{
+		//std::cout << window.getPosition().x << std::endl;
+
 		//Window move beg
-		if(not MAIN_STAY)
+		if(not settings.main_stay)
 			{
 			int mx = sf::Mouse::getPosition().x;
 			int my = sf::Mouse::getPosition().y;
@@ -112,25 +108,25 @@ int bar_main()
 				{
 				if ((not outside) or (my > 32))
 					{
-					if (wx > WINDOW_MIN_X)
+					if (wx > settings.window_min_x)
 						{
-						wx -= WINDOW_SPEED;
-						if (wx < WINDOW_MIN_X)
+						wx -= settings.window_speed;
+						if (wx < settings.window_min_x)
 							{
-							wx = WINDOW_MIN_X;
+							wx = settings.window_min_x;
 							}
 						}
 					outside = false;
 					window.setFramerateLimit(60);
 					}
 				}
-			else if (wx < Screen::get_width())
+			else if (wx < screen_max_x)
 				{
-				wx += WINDOW_SPEED;
+				wx += settings.window_speed;
 				exiting = true;
-				if (wx >= Screen::get_width())
+				if (wx >= screen_max_x)
 					{
-					wx = Screen::get_width();
+					wx = screen_max_x;
 					outside = true;
 					exiting = false;
 					window.setFramerateLimit(5);
@@ -153,68 +149,38 @@ int bar_main()
 				}
 			else if (event.type == sf::Event::MouseMoved)
 				{
-				for (BarButton& btn : buttons)
+				for (auto i : items)
 					{
-					btn.mouse_moved(mouse_pos_previous, mouse_pos);
+					i->mouse_moved(mouse_pos_previous, mouse_pos);
 					}
 				}
 			else if (event.type == sf::Event::MouseButtonPressed)
 				{
-				for (BarButton& btn : buttons)
+				for (auto i : items)
 					{
-					btn.mouse_pressed(mouse_pos);
+					i->mouse_pressed(mouse_pos);
 					}
-				/*if ((mouse_pos.x > se_sprite.getPosition().x) and (mouse_pos.y < 32))
-					{
-					// additional information
-					STARTUPINFO si;
-					PROCESS_INFORMATION pi;
-
-					// set the size of the structures
-					ZeroMemory(&si, sizeof(si));
-					si.cb = sizeof(si);
-					ZeroMemory(&pi, sizeof(pi));
-
-					// start the program up
-					CreateProcess(L"SideBarSettings.exe",   // the path
-						NULL,			// Command line
-						NULL,		    // Process handle not inheritable
-						NULL,           // Thread handle not inheritable
-						FALSE,          // Set handle inheritance to FALSE
-						0,              // No creation flags
-						NULL,           // Use parent's environment block
-						NULL,           // Use parent's starting directory 
-						&si,            // Pointer to STARTUPINFO structure
-						&pi             // Pointer to PROCESS_INFORMATION structure (removed extra parentheses)
-					);
-					// Close process and thread handles. 
-					CloseHandle(pi.hProcess);
-					CloseHandle(pi.hThread);
-
-					terminate();
-					}*/
 				}
 			else if (event.type == sf::Event::MouseButtonReleased)
 				{
-				for (BarButton& btn : buttons)
+				for (auto i : items)
 					{
-					btn.mouse_released(mouse_pos);
+					i->mouse_released(mouse_pos);
 					}
 				}
 			}
 		window.clear(sf::Color::Transparent);
 		if (not outside)
 			{
-			bg_sprite.setColor(sf::Color(SEC_RR, SEC_GG, SEC_BB));
-			pt_sprite.setColor(sf::Color(SEC_RR, SEC_GG, SEC_BB));
+			bg_sprite.setColor(sf::Color(settings.sec_rr, settings.sec_gg, settings.sec_bb));
+			pt_sprite.setColor(sf::Color(settings.sec_rr, settings.sec_gg, settings.sec_bb));
 
 			//step
 			ps.step();
-			for (BarButton& btn : buttons)
+			for (auto i : items)
 				{
-				btn.step();
+				i->step();
 				}
-			clock.step();
 			mouse_pos_previous = mouse_pos;
 
 			//draw
@@ -222,14 +188,20 @@ int bar_main()
 			window.draw(bg_sprite);
 
 			ps.draw(window);
-			window.draw(clock);
 			//window.draw(se_sprite);
-			for (BarButton& btn : buttons)
+			for (auto i : items)
 				{
-				window.draw(btn);
+				window.draw(*i);
 				}
 			}
 		window.display();
+		}
+
+	auto i = items.begin();
+	while(i != items.end())
+		{
+		delete *i;
+		i = items.begin();
 		}
 
 	return(0);

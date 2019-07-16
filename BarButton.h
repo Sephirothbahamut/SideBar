@@ -1,19 +1,17 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include <SFML\Graphics.hpp>
-#include "defines.h"
-#include <Windows.h>
+#include "SbItem.h"
+
 
 //string to wstring
 #include <atlbase.h>
 #include <atlconv.h>
 
-class BarButton : public sf::Drawable
+class BarButton : public SbItem
 	{
 	private:
 		std::vector<sf::IntRect> anim;
-		sf::IntRect collision;
 		sf::Sprite sprite;
 		sf::Text text;
 		usi current;
@@ -23,7 +21,7 @@ class BarButton : public sf::Drawable
 		virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
 	public:
-		BarButton(std::string text, std::string action, double x, double y, sf::Texture& texture, sf::Font& font, sf::Color &color);
+		BarButton(std::string text, std::string action, double x /*middle*/, double y /*top*/, sf::Texture& texture, sf::Font& font, sf::Color &color);
 		~BarButton();
 
 		void mouse_moved(sf::Vector2f mouse_pos);

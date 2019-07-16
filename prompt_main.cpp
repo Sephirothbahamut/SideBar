@@ -1,11 +1,6 @@
 #include "modules.h"
-
-extern int WINDOW_WIDTH;
-extern int WINDOW_HEIGHT;
-extern int WINDOW_MIN_X;
-extern int WINDOW_SPEED;
-
-extern int PROMPT_HEIGHT;
+#include "settings.h"
+extern Settings settings;
 
 
 int prompt_main()
@@ -17,7 +12,7 @@ int prompt_main()
 
 	Win::spawn_prompt(&prompt_startupinfo, &prompt_processinfo, &prompt_window);
 	//always on bottom
-	SetWindowPos(prompt_window, HWND_TOPMOST, 0, -PROMPT_HEIGHT + 2, Screen::get_width(), PROMPT_HEIGHT, SWP_SHOWWINDOW);
+	SetWindowPos(prompt_window, HWND_TOPMOST, 0, -settings.prompt_height + 2, Win::Screen::get_width(), settings.prompt_height, SWP_SHOWWINDOW);
 	SetWindowLong(prompt_window, GWL_EXSTYLE, GetWindowLong(prompt_window, GWL_EXSTYLE) | WS_EX_TOOLWINDOW);
 	SetWindowLong(prompt_window, GWL_STYLE, WS_POPUP | WS_VISIBLE);
 
@@ -37,14 +32,14 @@ int prompt_main()
 			{
 			if ((not outside) or (mx < 32))
 				{
-				if (wy < PROMPT_HEIGHT)
+				if (wy < settings.prompt_height)
 					{
-					wy += WINDOW_SPEED * 4;
-					if (wy > PROMPT_HEIGHT)
+					wy += settings.window_speed * 4;
+					if (wy > settings.prompt_height)
 						{
-						wy = PROMPT_HEIGHT;
+						wy = settings.prompt_height;
 						}
-					SetWindowPos(prompt_window, 0, 0, wy - PROMPT_HEIGHT, 0, 0, SWP_NOSIZE);
+					SetWindowPos(prompt_window, 0, 0, wy - settings.prompt_height, 0, 0, SWP_NOSIZE);
 					if (outside)
 						{
 						outside = false;
@@ -55,7 +50,7 @@ int prompt_main()
 			}
 		else if (wy > 0)
 			{
-			wy -= WINDOW_SPEED * 4;
+			wy -= settings.window_speed * 4;
 			exiting = true;
 			if (wy <= 0)
 				{
@@ -63,7 +58,7 @@ int prompt_main()
 				outside = true;
 				exiting = false;
 				}
-			SetWindowPos(prompt_window, 0, 0, wy - PROMPT_HEIGHT, 0, 0, SWP_NOSIZE);
+			SetWindowPos(prompt_window, 0, 0, wy - settings.prompt_height, 0, 0, SWP_NOSIZE);
 			}
 		//Console move end
 		Sleep(1000 / 60);

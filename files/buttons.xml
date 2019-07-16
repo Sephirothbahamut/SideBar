@@ -1,14 +1,12 @@
 <buttons>
-    <info n='0'/>
-    <list>
-        <button text = "Bing" action = "http://www.bing.com/"/>
-        <button text = "Hotmail" action = "http://www.outlook.live.com/"/>
-        <button text = "Orari Unitn" action = "http://webapps.unitn.it/Orari/it/Web/CalendarioCds/2016/10023/10114/2#2016-12-2"/>
-        <button text = "Telegram Web" action = "https://web.telegram.org/#/im"/>
-        <button text = "Netflix" action = "https://www.netflix.com/browse"/>
-        <button text = "Task Manager" action = "Taskmgr.exe"/>
-        <button text = "CMD" action = "cmd"/>
-        <button text = "localized google" action = "http://isearchfrom.com/"/>
-    </list>
+	<clock/>
+	<button text = "Bing" action = "http://www.bing.com/"/>
+	<button text = "Hotmail" action = "http://www.outlook.live.com/"/>
+	<button text = "Orari Unitn" action = "http://webapps.unitn.it/Orari/it/Web/CalendarioCds/2016/10023/10114/2#2016-12-2"/>
+	<button text = "Telegram Web" action = "https://web.telegram.org/#/im"/>
+	<button text = "Netflix" action = "https://www.netflix.com/browse"/>
+	<button text = "Task Manager" action = "Taskmgr.exe"/>
+	<button text = "CMD" action = "cmd"/>
+	<button text = "localized google" action = "http://isearchfrom.com/"/>
 </buttons>
 

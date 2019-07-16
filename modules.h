@@ -2,19 +2,15 @@
 
 #include <SFML\Graphics.hpp>
 #include <iostream>
-#include <Windows.h>
+
 #include <algorithm>
 #include <dwmapi.h>
-#include "tinyxml2.h"
-
-#define xml tinyxml2
+#include "settings.h"
 
 #pragma comment (lib, "dwmapi.lib")
 
 //myincludes
-#include "Screen.h"
 #include "Win.h"
-#include "autorun.h"
 #include "defines.h"
 #include "PartSystem.h"
 //#include "OldPartSystem.h"
@@ -25,3 +21,4 @@ int bar_main();
 int prompt_main();
 int bottom_main();
 int wallpaper_main();
+//int mouse_effects_main();
