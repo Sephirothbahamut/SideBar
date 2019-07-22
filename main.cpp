@@ -30,7 +30,7 @@ int main()
 
 	//create particle texture
 	if (not pt_texture.loadFromFile("textures/particles/s_particle.png"))
-		{/*handle error*/
+		{/*TODO handle error*/
 		}
 	pt_texture.setSmooth(true);
 
@@ -41,20 +41,11 @@ int main()
 
 
 	//create bottom bar
-	if (settings.enable_bottom_bar)
-		{
-		THREAD_BOTTOM_BAR = std::thread(bottom_main);
-		}
+	if (settings.enable_bottom_bar) { THREAD_BOTTOM_BAR = std::thread(bottom_main); }
 	//create prompt
-	if (settings.enable_prompt)
-		{
-		THREAD_PROMPT = std::thread(prompt_main);
-		}
+	if (settings.enable_prompt) { THREAD_PROMPT = std::thread(prompt_main); }
 	//create wallpaper
-	if (settings.enable_wallpaper)
-		{
-		THREAD_WALLPAPER = std::thread(wallpaper_main);
-		}
+	if (settings.enable_wallpaper) { THREAD_WALLPAPER = std::thread(wallpaper_main); }
 	//THREAD_MOUSE_EFFECTS = std::thread(mouse_effects_main);
 
 	bar_main();
